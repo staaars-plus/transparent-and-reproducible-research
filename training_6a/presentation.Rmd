@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Documents with Jupyter Notebooks"
-output: pdf_document
+output: beamer
 ---
 
 ## Before We Begin

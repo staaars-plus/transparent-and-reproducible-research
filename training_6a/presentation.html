@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Dynamic Documents with Jupyter Notebooks</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="presentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="presentation_files/libs/quarto-html/quarto.js"></script>
+<script src="presentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="presentation_files/libs/quarto-html/anchor.min.js"></script>
+<link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="presentation_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="presentation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="presentation_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dynamic Documents with Jupyter Notebooks</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="before-we-begin" class="level2">
+<h2 class="anchored" data-anchor-id="before-we-begin">Before We Begin</h2>
+<ul>
+<li>Special thanks to Oscar Barriga Cabanillas for helping out today</li>
+<li>Thank you for BITSS for organizing</li>
+<li>How has it been so far?</li>
+<li>A Question:
+<ul>
+<li>How familiar are you with python? Jupyter?</li>
+<li>What are you thinking of getting out of this talk?</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-to-watch-this-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-watch-this-presentation">How to watch this presentation:</h2>
+<ul>
+<li>Either:
+<ul>
+<li><code>git clone</code> the repository</li>
+<li>Start up jupyter lab</li>
+<li>open <code>presentation.ipynb</code></li>
+<li>follow along</li>
+</ul></li>
+<li>Or:
+<ul>
+<li>Go to the repository and press the <code>Launch Binder</code> Button</li>
+<li>To be explained later.</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-dynamic-documents" class="level2">
+<h2 class="anchored" data-anchor-id="why-dynamic-documents">Why Dynamic Documents?</h2>
+<p>Dynamic Documents are a part of the bigger picture of Reproducible Science. Sure, there is a fixed cost; <strong>BUT</strong>, they make my life easier in these ways:</p>
+<ul>
+<li>Short term: Easier to document fresh out of the oven results</li>
+<li>Medium term: Fast, reliable and tractable new results</li>
+<li>Long term: You can see how everything was created</li>
+</ul>
+</section>
+<section id="what-are-dynamic-documents" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-dynamic-documents">What are Dynamic Documents?</h2>
+<p>Based on principles of literate programming, we aim at combining code and paper in one single document</p>
+<ul>
+<li>Best framework to achieve the holy grail of one-click reproducible workflow</li>
+<li>Best two current implementations: RMarkdown (R) &amp; Jupyter (Python).</li>
+<li>Stata is catching up: We will come back to this in a second</li>
+</ul>
+</section>
+<section id="the-state-of-things-now" class="level2">
+<h2 class="anchored" data-anchor-id="the-state-of-things-now">The State of Things Now</h2>
+<p>Currently, the code and the narrative components live in separate universes</p>
+<p><img src="figures/flow_3.png" width="1000"></p>
+</section>
+<section id="part-of-larger-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="part-of-larger-workflow">Part of Larger Workflow</h2>
+<ul>
+<li>Dynamic documents are best used as part of a larger organized workflow
+<ul>
+<li>Structuring folders: Data, analysis, output</li>
+<li>Documenting code</li>
+<li>Combining both into a final document: Pre analysis or final paper</li>
+</ul></li>
+</ul>
+</section>
+<section id="markdowns-entrance" class="level2">
+<h2 class="anchored" data-anchor-id="markdowns-entrance">Markdown’s Entrance</h2>
+<ul>
+<li>In terms of writing the “paper”/documentation part of dynamic documents, there are many solutions
+<ul>
+<li>Latex, HTML, RST (ReStructured Text)</li>
+</ul></li>
+<li>But most have honed in on using Markdown
+<ul>
+<li>Markdown is an easy way to write formatted text in a plain text format</li>
+<li>But without as verbose and difficult of a syntax like latex/HTML</li>
+</ul></li>
+<li>Although basic markdown has the basics for formatting, creating tables, adding figures</li>
+<li>We will use Pandoc, which is used in both the Stata and R sessions</li>
+</ul>
+</section>
+<section id="markdown-cheatsheet" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-cheatsheet">Markdown Cheatsheet</h2>
+<p>There are loads of markdown cheatsheats on the web. One can be found <a href="https://www.markdownguide.org/cheat-sheet/">here</a></p>
+</section>
+<section id="headings" class="level2">
+<h2 class="anchored" data-anchor-id="headings">Headings</h2>
+<pre><code>Title -&gt; # Title
+Section -&gt; ## Section
+Subsection -&gt; ### Subsection
+Subsubsubsection -&gt;  #### Subsubsubsection</code></pre>
+</section>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+<ul>
+<li>My list
+<ul>
+<li>an <em>italic</em> and <strong>bold</strong> nested list</li>
+</ul></li>
+</ul>
+<!-- -->
+<pre><code>- My List
+    - an *italic* and **bold** nested list</code></pre>
+</section>
+<section id="math" class="level2">
+<h2 class="anchored" data-anchor-id="math">Math</h2>
+<p>We assume that comparative advantage is <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\alpha = \beta + \gamma\)</span></p>
+<pre><code>We assume that comparative advantage is $\alpha$ and $\alpha = \beta + \gamma$</code></pre>
+<p><span class="math display">\[\begin{aligned}
+y_{it} = X_{it}\beta + \varepsilon_{it} \\
+X_{it}  = Z_{it}\gamma + \nu_{it}
+\end{aligned}\]</span></p>
+<pre><code>$$\begin{aligned}
+y_{it} = X_{it}\beta + \varepsilon_{it} \\
+X_{it}  = Z_{it}\gamma + \nu_{it}
+\end{aligned}$$</code></pre>
+</section>
+<section id="what-is-pandoc" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-pandoc">What is Pandoc?</h2>
+<ul>
+<li>Pandoc is sort of what it says: pan (all), doc (document)</li>
+<li>It’s a way to convert between and across different file formats
+<ul>
+<li>Word -&gt; HTML</li>
+<li>Latex -&gt; Markdown</li>
+<li>HTML -&gt; XML</li>
+<li>Anything to anything</li>
+</ul></li>
+<li>See Pandoc’s <a href="https://pandoc.org/MANUAL.html#options">website</a> for all input and output filetypes</li>
+</ul>
+</section>
+<section id="the-magic-of-pandoc" class="level2">
+<h2 class="anchored" data-anchor-id="the-magic-of-pandoc">The Magic of Pandoc</h2>
+<ul>
+<li>Pandoc and Markdown allows you to create one file that can then be used in many different places</li>
+<li>Example:
+<ul>
+<li>You’re writing your CV and want to put it up in various places.</li>
+<li>Your website needs HTML</li>
+<li>One job posting allows PDF</li>
+<li>One job posting only allows Word</li>
+</ul></li>
+<li>Ordinarily, you would need to have three versions, Word, HTML, PDF
+<ul>
+<li>This might get unruly as you change one but forget to change the other</li>
+<li>What if there’s another file format you might need?</li>
+</ul></li>
+<li>With Pandoc and markdown, you would:
+<ul>
+<li>write your CV in markdown</li>
+<li>convert to PDF, Word and PDF with pandoc</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-are-jupyter-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-jupyter-notebooks">What are Jupyter Notebooks?</h2>
+<ul>
+<li>A way to do literate programming and dynamic documents</li>
+<li>Provide code and writing/analysis, on a language agnostic platform
+<ul>
+<li>Meaning that it is not restricted to just one language</li>
+<li>Currently there are so-called kernels for many languages</li>
+<li>Including Stata, Python, R, C, Golang, C++, Fortran and more coming!</li>
+</ul></li>
+<li>Uses the power of Markdown/Latex Math and Code to tell a story and provide an efficient workflow</li>
+<li>Convert into several different formats including Latex, HTML, Presentations etc…</li>
+<li>The Jupyter server is also available in other text editors such as Atom and VS Code.</li>
+<li>And now available in STATA!</li>
+</ul>
+</section>
+<section id="under-the-hood" class="level2">
+<h2 class="anchored" data-anchor-id="under-the-hood">Under the Hood</h2>
+<ul>
+<li>You can think of Jupyter as broadly being made up of two parts:
+<ul>
+<li>A JSON document that organizes text between markdown, code, figures, widgets, etc…</li>
+<li>A server that loads a “kernel” with a particular language and knows how to translate the markdown to formatted text and the code to execution</li>
+<li>A web interface (although not required)</li>
+</ul></li>
+</ul>
+<p><img src="figures/DeepinScreenshot_select-area_20190107171714.png" width="600"></p>
+</section>
+<section id="why-jupyter-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="why-jupyter-notebooks">Why Jupyter Notebooks?</h2>
+<ul>
+<li>Jupyter is ubiquitous</li>
+<li>Jupyter is used by basically all of the data science community</li>
+<li>Jupyter is used by other software (VS Code, Atom/Hydrogen)</li>
+<li>Since Jupyter is a JSON document and built using web tools, anything that uses webtools can use it</li>
+<li>Science and publishing is changing (PDFs are becoming old, open access and web journals are becoming more popular)
+<ul>
+<li>Present results in a dynamic way</li>
+<li>Interactive</li>
+<li>More efficient to show quick interactive widget to experiment with colleagues/advisors than 50 figures in a static PDF</li>
+</ul></li>
+</ul>
+</section>
+<section id="extensions" class="level2">
+<h2 class="anchored" data-anchor-id="extensions">Extensions</h2>
+<p>JupyterLab (the web interface) comes with many extensions for anything you might want:</p>
+<ul>
+<li>A language server</li>
+<li>multicursor support</li>
+<li>git integration</li>
+<li>and more…</li>
+</ul>
+</section>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">10</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>treat <span class="ot">=</span> <span class="fu">as.integer</span>(x <span class="sc">&gt;</span> .<span class="dv">2</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">10</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y,x,treat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           y          x treat
+1  0.6676628 0.08867304     0
+2  0.8116957 0.42263591     1
+3  0.3806982 0.64002582     1
+4  0.4742246 0.52942475     1
+5  0.3002167 0.89525678     1
+6  0.6446560 0.14261210     0
+7  0.9222889 0.54821625     1
+8  0.1498110 0.09564459     0
+9  0.2706156 0.16588079     0
+10 0.3030774 0.37182861     1</code></pre>
+</div>
+</div>
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y=</span>y)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="presentation_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>
+Please cite as: </code></pre>
+<pre><code> Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code> R package version 5.2.3. https://CRAN.R-project.org/package=stargazer </code></pre>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="st">"y ~ treat + x"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com % Date and time: Thu, Jul 14, 2022 - 23:17:19
+</section>
+<section id="exporting" class="level2">
+<h2 class="anchored" data-anchor-id="exporting">Exporting</h2>
+<ul>
+<li>Exporting to HTML, PDF and slides is possible through the menu: File -&gt; Export Notebook as -&gt; PDF</li>
+</ul>
+</section>
+<section id="binder-and-hosting-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="binder-and-hosting-notebooks">Binder and Hosting Notebooks</h2>
+<ul>
+<li>Jupyter is great and all, but what if you advisor/boss doesn’t have Jupyter installed?</li>
+<li>What if they do, but they don’t have all the dependencies needed for your cool dashboard?</li>
+<li>That’s where binder comes in</li>
+<li>Binder uses <code>docker</code> to create a containerized version of your notebook with all dependencies installed and anyone can access it even if they don’t have jupyter installed at all.</li>
+<li>They just need a web browser</li>
+<li>We’ve already seen how this works, either with the dashboard or with this very presentation!</li>
+<li>All you need is a public github repository and notebook in that repository and that’s it!</li>
+<li>Waiting time for spinning up the notebook will vary</li>
+<li>While it’s spinning it up, any questions so far?</li>
+</ul>
+</section>
+<section id="port-forwarding-and-setting-up-jupyter-to-work-on-a-server" class="level2">
+<h2 class="anchored" data-anchor-id="port-forwarding-and-setting-up-jupyter-to-work-on-a-server">Port-forwarding and setting up Jupyter to work on a server</h2>
+<ul>
+<li>Many people might have servers in their universities/organizations that are more powerful than a laptop.</li>
+<li>Jupyter allows the ability to run a notebook locally (on your laptop screen), but using the power of the server.
+<ul>
+<li>This requires jupyter being installed on the server</li>
+<li>This isn’t a difficult thing to do for a sysadmin, so it’s worth finding out whether that’s possible</li>
+</ul></li>
+</ul>
+<section id="setting-up-jupyter-on-a-server" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-jupyter-on-a-server">Setting up jupyter on a server</h3>
+<ul>
+<li>The first thing you need to do is log on to the server and start a jupyter instance:</li>
+</ul>
+<p><code>jupyter notebook --no-browser --port=8888</code></p>
+<ul>
+<li><p>This tells the server to start an instance of jupyter, without a browser (we won’t need it, nor can a server open up a browser window), in port 8888 (this will be important later)</p></li>
+<li><p>For Mac users, you can use <code>ssh</code> to finish the process. Just type: <code>ssh username@host -L 8888:localhost:8888</code></p></li>
+<li><p>Which will forward your computer 8888 port, to the server’s 8888 port.</p></li>
+<li><p>For Windows, ssh also exists, but you will need to enable it.</p>
+<ul>
+<li>head to Settings &gt; Apps and click “Manage optional features” under Apps &amp; features.</li>
+<li>Click Add a Feature, and find OpenSSH</li>
+</ul></li>
+<li><p>Then use the same command as for Macs: <code>ssh username@host -L 8888:localhost:8888</code></p></li>
+<li><p>Then go to your browser:</p>
+<ul>
+<li><code>localhost:8888</code> and you should be taken to a Jupyter page and prompted for a token.</li>
+<li>You can find this token in the window where you started Jupyter on the server
+<ul>
+<li>Copy and paste this token into the prompt, and VOILA!</li>
+</ul></li>
+</ul></li>
+<li><p>Now you have Jupyter running on your computer’s browser window, but with the power of the server!</p></li>
+</ul>
+</section>
+</section>
+<section id="taking-all-this-to-pure-text" class="level2">
+<h2 class="anchored" data-anchor-id="taking-all-this-to-pure-text">Taking all this to Pure Text</h2>
+<ul>
+<li>One drawback of jupyter (besides dependencies) is the fact that you need to install all of this and use a browser</li>
+<li>Not very good for version control</li>
+<li><code>Rmd</code> files (used with RMarkdown) are just markdown files with code cells.
+<ul>
+<li>Great for version control</li>
+<li>Readble</li>
+<li>Easy to share and read in its raw form</li>
+</ul></li>
+<li>Can we do this with Jupyter?
+<ul>
+<li>Yes! with <code>jupytext</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="shameless-self-promotion" class="level2">
+<h2 class="anchored" data-anchor-id="shameless-self-promotion">Shameless self-promotion</h2>
+<ul>
+<li>Export notebook to a do-file!</li>
+</ul>
+<p><a href="https://github.com/amichuda/jupyter-doexport" class="uri">https://github.com/amichuda/jupyter-doexport</a></p>
+</section>
+<section id="a-stata-equivalent" class="level2">
+<h2 class="anchored" data-anchor-id="a-stata-equivalent">A Stata Equivalent?</h2>
+<ul>
+<li><code>stata-markdown</code></li>
+<li><code>dyndoc</code></li>
+<li><code>putdocx</code></li>
+<li><code>putpdf</code></li>
+</ul>
+</section>
+<section id="other-extras-not-covered" class="level2">
+<h2 class="anchored" data-anchor-id="other-extras-not-covered">Other Extras not Covered</h2>
+<ul>
+<li><code>jupyter-cache</code></li>
+<li><code>codebraid</code></li>
+<li><code>binder</code> and <code>docker</code></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
