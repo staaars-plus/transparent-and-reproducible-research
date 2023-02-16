@@ -1,26 +1,24 @@
 ---
-title: "Training 5: Transparent and Reproducible Research"
+title: "\\vspace{3cm}Training: Transparent and Reproducible Research"
 author: Aleksandr Michuda
+format: 
+  beamer:
+    theme: metropolis
+    titlegraphic: ../figures/logo.pdf
 institute: Center for Data Science for Enterprise and Society, Cornell University
-theme: metropolis
-header-includes: 
-  - \titlegraphic{\includegraphics[height=1.5cm]{../figures/logo.pdf}}
-  - \usepackage{booktabs}
-pandoc-latex-admonition:
-  - color: firebrick
-    classes: [admonition]
 ---
+
 
 ## Introduction
 
 Special Thanks to Oscar Barriga-Cabanillas and Matthieu Stigler!
 
 - Welcome!
-  - Training 5: Transparency and Reproducibility in Research (You are here.)
-  - Training 6: Data Management
-  - Training 6a: Dynamic Documents
+  - **Transparency and Reproducibility in Research (You are here.)**
+  - Data Management
+  - Dynamic Documents
 
-## Training 5: Transparency and Reproducibility in Research
+## Transparency and Reproducibility in Research
 
 - Is there a problem with replicability and statistical validity?
 - Is there a reproducibility crisis?
@@ -34,7 +32,6 @@ Special Thanks to Oscar Barriga-Cabanillas and Matthieu Stigler!
   - Multiple testing
   - Workflow
   - Null results are not a failure
-- Exercises
 
 ## Replication Disincentives
 
@@ -89,21 +86,43 @@ shielding - people wanted to believe them
 
 ## Preview of Solutions
 
-- > Cutting/subsetting/"exploring" sample until we find an "interesting" (read: stat. sig.) result
+Cutting/subsetting/"exploring" sample until we find an "interesting" (read: stat. sig.) result
 
-**Solution: Multiple Hypothesis Testing; Pre-analysis Plans**
+:::{.callout-note}
+## Solution: 
 
-- > Not considering null results as interesting
+Multiple Hypothesis Testing; Pre-analysis Plans
+:::
 
-**Solution: Registered Reports (Also, the idea of *precise zeros*)**
+## Preview of Solutions
 
-- > Not commenting code/making it easier for someone to read/run our code
+Not considering null results as interesting
 
-**Solution: dynamic documents, code commenting, docker**
+:::{.callout-note}
+## Solution 
 
-- > Not taking version control seriously
+Registered Reports (Also, the idea of *precise zeros*)
+:::
 
-**Solution: `git`**
+## Preview of Solutions
+
+Not commenting code/making it easier for someone to read/run our code
+
+:::{.callout-note}
+## Solution
+
+dynamic documents, code commenting, docker
+:::
+
+## Preview of Solutions
+
+Not taking version control seriously
+
+:::{.callout-note}
+## Solution 
+
+`git`
+:::
 
 ## Null Results
 
@@ -137,7 +156,8 @@ Nulls are needed to understand full distribution of results!
   - Get acceptance
   - Run the study, and publish even with null results
 
-\href{https://osf.io/8mpji/wiki/home/}{Hundreds of Journals Participating \beamergotobutton{Link}}
+[Hundreds of Journals Participating](https://osf.io/8mpji/wiki/home/)
+
 
 ## Including...JDE!
 
@@ -161,8 +181,8 @@ Nulls are needed to understand full distribution of results!
   - Review design
   - Check that no-reject is not due to a small sample with respect to the effect size 
   
-::: {.admonition} :::
-**Definition (Minimum detectable effect size)**
+::: {.callout-note} :::
+## Definition (Minimum detectable effect size)
 
 The smallest actual effect, which can be detected for a
 certain level of power and statistical significance. 
@@ -205,7 +225,8 @@ M=\# tests: & 1 & 2 & 3 & 5 & 10 & 20 & 50\tabularnewline
 
 ## P-hacking
 
-::: {.admonition} :::
+::: {.callout-note} :::
+## P-Hacking
 Systematic search for significant results on
 multiple combinations of i) dependent variables ii)
 combinations of independent variables; reporting
@@ -281,8 +302,8 @@ positives: Benjamini – Hochberg
 
 ## Pre-analysis Plans
 
-::: {.admonition} :::
-**Pre-analysis Plan**
+::: {.callout-note} :::
+## Pre-analysis Plan
 
 Detailed description of the analyses to be conducted
 (hypotheses, variables, equations, controls, etc): This
