@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Documents with Jupyter Notebooks"
+title: "Dynamic Documents"
 author: Aleksandr Michuda
 format: 
   docx:
