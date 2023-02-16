@@ -6,8 +6,9 @@ format:
     toc: true
     number-sections: true
     highlight-style: github
+  beamer:
+    number-sections: true
 jupyter: stata
-
 ---
 
 ## Before We Begin

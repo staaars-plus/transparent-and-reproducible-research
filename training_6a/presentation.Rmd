@@ -1,6 +1,5 @@
 ---
 title: "Dynamic Documents with Jupyter Notebooks"
-output: beamer
 ---
 
 ## Before We Begin

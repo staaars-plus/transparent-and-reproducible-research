@@ -2,7 +2,8 @@
 Stata Do File converted from Jupyter notebook
 /
 
- # Dynamic Documents with Jupyter Notebooks 
+ Dynamic Documents with Jupyter Notebooks 
+ ========================================
 
  ## Before We Begin
  
