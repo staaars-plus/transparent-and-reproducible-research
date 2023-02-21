@@ -1,15 +1,12 @@
 ---
-title: "Training 6: Data Management and Making your Workflow Transparent"
+title: "\\vspace{3.5cm}Training: Data Management and Making your Workflow Transparent"
 subtitle: An Introduction to `git`
 author: Aleksandr Michuda
+format: 
+  beamer:
+    theme: metropolis
+    titlegraphic: ../figures/logo.pdf
 institute: Center for Data Science for Enterprise and Society, Cornell University
-theme: metropolis
-header-includes: 
-  - \titlegraphic{\includegraphics[height=1.5cm]{../figures/logo.pdf}}
-  - \usepackage{booktabs}
-pandoc-latex-admonition:
-  - color: firebrick
-    classes: [admonition]
 ---
 
 ## Introduction
@@ -17,9 +14,9 @@ pandoc-latex-admonition:
 Special Thanks to Oscar Barriga-Cabanillas and Matthieu Stigler!
 
 - Welcome!
-  - Training 5: Transparency and Reproducibility in Research 
-  - Training 6: Data Management (You are here.)
-  - Training 6a: Dynamic Documents
+  - Transparency and Reproducibility in Research 
+  - Data Management (You are here.)
+  - Dynamic Documents
 
 ## What are we doing today?
 
@@ -71,11 +68,8 @@ Special Thanks to Oscar Barriga-Cabanillas and Matthieu Stigler!
 
 ## Status Quo Today
 
-::: columns
-::::{.column align=center}
-![](https://phdcomics.com/comics/archive/phd101212s.gif)
-::::
-:::
+![](../figures/phd101211s.png)
+
 
 ## What is Version Control?
 
@@ -91,9 +85,8 @@ Special Thanks to Oscar Barriga-Cabanillas and Matthieu Stigler!
 
 - Created by Linus Torvalds in 2005 (creator of Linux)
   - Started as a way to keep track of the Linux kernel (but can be used for any project)
-  - “I'm an egotistical b\*\*\*\*\*, and I name all my projects after myself. First 'Linux', now 'git'”
     - Git being British slang for unpleasant person
-- Git works by keeping track of files in a repository (fancy name for your folder with your work in it)
+- Git works by keeping track of files in a repository (folder with your work in it)
   - And having a folder called .git that keeps track of branches, changes, adds and commits
 
 ## 
@@ -114,6 +107,20 @@ Each version of a file is given some “name”
 - Instead of “v3_changed” it’s just some name that a computer understands better
 :::
 ::::::::::::::::::::::::::::
+
+## Steps in Workflow 
+
+:::{.incremental}
+- To start a new project:
+  - Forking
+  - Cloning
+- While working...
+  - Adding
+  - Committing
+  - Pushing
+  - Branching
+:::
+
 
 ## Adding/Committing
 
